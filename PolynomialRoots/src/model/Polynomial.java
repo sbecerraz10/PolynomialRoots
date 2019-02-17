@@ -4,8 +4,9 @@
 package model;
 
 /**
- * @author Sebastian B.
- *
+ * @author Sebastian Becerra
+ * @author Jhonnier Isaza
+ * @author Camilo Vargas
  */
 public class Polynomial {
 

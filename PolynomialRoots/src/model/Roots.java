@@ -4,8 +4,9 @@
 package model;
 
 /**
- * @author sebastian
- *
+ * @author Sebastian Becerra
+ * @author Jhonnier Isaza
+ * @author Camilo Vargas
  */
 public class Roots {
 
