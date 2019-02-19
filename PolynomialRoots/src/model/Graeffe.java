@@ -7,19 +7,7 @@ package model;
  * @author Sebastian
  *
  */
-//public class Graeffe {
-//
-//	/**
-//	 * 
-//	 */
-//	public Graeffe() {
-//		// TODO Auto-generated constructor stub
-//	}
-//	
-//	
-//	
-//
-//}
+
 
 public class Graeffe {
 	
@@ -37,6 +25,10 @@ public class Graeffe {
     
     private double[] complexModules = new double[2];
 
+    public Graeffe() {
+    	
+    }
+    
     public Graeffe(double[] coefficients) {
         n = coefficients.length-1; 
         realRoots = new double[n]; 
