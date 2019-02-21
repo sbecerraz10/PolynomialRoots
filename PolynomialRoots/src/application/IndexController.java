@@ -39,7 +39,15 @@ public class IndexController {
 	
 	@FXML
 	void generatePolynomial(ActionEvent event) {
-		
+		int random = (int)(Math.random() * 9 + 1);
+		String coef = "";
+		grades.setValue(random);
+		for(int i= 0;  i <= random + 1; i++ ) {
+			
+			int random1 = (int)(Math.random() * 9 + 1);
+			coef += random1 +" ";
+		}
+		coefficients.setText(coef);  
 	}
 
 	@FXML
@@ -50,14 +58,24 @@ public class IndexController {
 				String[] parts = cof.split(" ");
 				
 				int random = (int)(Math.random() * 1) + 1;
-				if(random == 8) {
+				if(random == 1) {
 					Main.setGraeffeMethod(new Graeffe(convert(parts)));
 					Main.getGraeffeMethod().showRoots();					
-				}else if(random == 2 || random == 1) {
+					realSolution.setText(Main.getGraeffeMethod().realRoots[0] + "");
+					complexSolution.setText(Main.getGraeffeMethod().complexRoots[0] + "");
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setContentText("Solved By Graeffe's Method");
+					alert.setTitle("INFO");
+					alert.showAndWait();
+					
+				}else if(random == 2) {
 					Main.setBairstowMethod(new Bairstow(parts,grades.getSelectionModel().getSelectedIndex()));
 					System.out.println("ENTRO EN BAIRSTOW");
 					Main.getBairstowMethod().solve();
-					//realSolution.setText();
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setContentText("Solved By Baristow's Method");
+					alert.setTitle("INFO");
+					alert.showAndWait();
 				}
 			}catch(Exception e) {
 				Alert alert = new Alert(AlertType.WARNING);
