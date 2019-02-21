@@ -40,7 +40,7 @@
       <TextField fx:id="polynomialGenerated" layoutX="235.0" layoutY="268.0" prefHeight="29.0" prefWidth="428.0" style="-fx-border-color: red;" />
       <AnchorPane layoutX="68.0" layoutY="326.0" prefHeight="150.0" prefWidth="549.0" style="-fx-border-color: black;">
          <children>
-            <Label layoutX="152.0" layoutY="98.0" text="Polynomial=">
+            <Label layoutX="152.0" layoutY="98.0" text="Complex=">
                <font>
                   <Font size="18.0" />
                </font>
@@ -50,13 +50,13 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="230.0" layoutY="42.0" text="X=">
+            <Label layoutX="170.0" layoutY="42.0" text="Real  =">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="solutionX" editable="false" layoutX="262.0" layoutY="42.0" prefHeight="27.0" prefWidth="149.0" style="-fx-border-color: red;" />
-            <TextField fx:id="solutionPolynomial" editable="false" layoutX="262.0" layoutY="99.0" style="-fx-border-color: red;" />
+            <TextField fx:id="realSolution" editable="false" layoutX="262.0" layoutY="42.0" prefHeight="27.0" prefWidth="149.0" style="-fx-border-color: red;" />
+            <TextField fx:id="complexSolution" editable="false" layoutX="262.0" layoutY="99.0" style="-fx-border-color: red;" />
          </children>
       </AnchorPane>
       <Label layoutX="36.0" layoutY="205.0" text="Grade:">

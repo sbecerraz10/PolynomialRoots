@@ -6,6 +6,7 @@ package model;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * @author Sebastian
@@ -18,6 +19,10 @@ public class Bairstow {
 	  private double[] c;
 	  private int n;
 
+	  private ArrayList<String> complex;
+	  private ArrayList<String>  real;
+	  
+	  
 	  public Bairstow()
 	  {
 	    
@@ -32,6 +37,10 @@ public class Bairstow {
 		b = new double[20];
 		c = new double[20];
 		n = m;
+		
+		complex = new ArrayList<String>();
+		real = new ArrayList<String>();
+		
 	    for (int i = 0; i < n + 1; i++)
 	      a[n-i] = Double.parseDouble(tokens[i]);
 	  }
@@ -76,9 +85,12 @@ public class Bairstow {
 
 	        error = Math.sqrt(du * du + dv * dv);
 	      }
+	      real.add("1" + " " + (-1*u) + " "+(-1*v));
+	      
 	      System.out.println("1" + " " + (-1*u) + " "+(-1*v));
 	      for(int t=n-2;t>=0;t--){
 	        System.out.print(b[t]+" ");
+	        real.add(b[t]+" ");
 	      }
 	      System.out.println();
 	      sq = u * u + 4 * v;
@@ -86,13 +98,16 @@ public class Bairstow {
 	      if (sq < 0) {
 	        r1 = u/2;
 	        r2 = Math.sqrt(-sq)/2;
-
+	        complex.add(r1 + " + " + r2 + "i");
+	        complex.add(r1 + " - " + r2 + "i");
 	        System.out.println(r1 + " + " + r2 + "i");
 	        System.out.println(r1 + " - " + r2 + "i");
 	      } else {
 	        r1 = u/2 + Math.sqrt(sq)/2;
 	        r2 = u/2 - Math.sqrt(sq)/2;
-
+	        
+	        real.add(r1+"");
+	        real.add(r2+"");
 	        System.out.println(r1);
 	        System.out.println(r2);
 	      }
@@ -123,7 +138,7 @@ public class Bairstow {
 	        r -= dr;
 	        error = Math.abs(dr);
 	      }
-
+	      real.add(r+"");
 	      System.out.println(r);
 	      n--;
 
@@ -140,19 +155,39 @@ public class Bairstow {
 	      if (sq < 0) {
 	        r1 = u/2;
 	        r2 = Math.sqrt(-sq)/2;
-
+	        complex.add(r1 + " + " + r2 + "i");
+	        complex.add(r1 + " - " + r2 + "i");
 	        System.out.println(r1 + " + " + r2 + "i");
 	        System.out.println(r1 + " - " + r2 + "i");
 	      } else {
 	        r1 = u/2 + Math.sqrt(sq)/2;
 	        r2 = u/2 - Math.sqrt(sq)/2;
-
+	        real.add(r1+"");
+	        real.add(r2+"");
+	        
 	        System.out.println(r1);
 	        System.out.println(r2);
 	      }
 	    } else if (n == 1) {
+	    	real.add(-a[0] / a[1] +"");
 	      System.out.println(-a[0] / a[1]);
 	    }
 	  }
+
+	public ArrayList<String> getComplex() {
+		return complex;
+	}
+
+	public void setComplex(ArrayList<String> complex) {
+		this.complex = complex;
+	}
+
+	public ArrayList<String> getReal() {
+		return real;
+	}
+
+	public void setReal(ArrayList<String> real) {
+		this.real = real;
+	}
 
 }

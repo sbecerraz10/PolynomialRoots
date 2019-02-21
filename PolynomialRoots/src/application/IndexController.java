@@ -20,10 +20,10 @@ public class IndexController {
 	private TextField polynomialGenerated;
 
 	@FXML
-	private TextField solutionX;
+	private TextField realSolution;
 
 	@FXML
-	private TextField solutionPolynomial;
+	private TextField complexSolution;
 
 	@FXML
 	private ChoiceBox<Integer> grades;
@@ -57,6 +57,7 @@ public class IndexController {
 					Main.setBairstowMethod(new Bairstow(parts,grades.getSelectionModel().getSelectedIndex()));
 					System.out.println("ENTRO EN BAIRSTOW");
 					Main.getBairstowMethod().solve();
+					//realSolution.setText();
 				}
 			}catch(Exception e) {
 				Alert alert = new Alert(AlertType.WARNING);
