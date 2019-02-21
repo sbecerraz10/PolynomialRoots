@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import model.Bairstow;
 import model.Graeffe;
 
 public class IndexController {
@@ -42,20 +43,20 @@ public class IndexController {
 	}
 
 	@FXML
-	void solvePolynomial(ActionEvent event) {
-		
-		
+	void solvePolynomial(ActionEvent event) {		
 		if(coefficients.getText()!="" && !grades.getSelectionModel().isEmpty()) {
 			try {
 				String cof = coefficients.getText();
 				String[] parts = cof.split(" ");
 				
 				int random = (int)(Math.random() * 1) + 1;
-				if(random == 1) {
+				if(random == 8) {
 					Main.setGraeffeMethod(new Graeffe(convert(parts)));
 					Main.getGraeffeMethod().showRoots();					
-				}else if(random == 2) {
-					Main.setGraeffeMethod(new Graeffe(convert(parts)));
+				}else if(random == 2 || random == 1) {
+					Main.setBairstowMethod(new Bairstow(parts,grades.getSelectionModel().getSelectedIndex()));
+					System.out.println("ENTRO EN BAIRSTOW");
+					Main.getBairstowMethod().solve();
 				}
 			}catch(Exception e) {
 				Alert alert = new Alert(AlertType.WARNING);

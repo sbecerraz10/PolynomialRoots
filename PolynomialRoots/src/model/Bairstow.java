@@ -20,18 +20,18 @@ public class Bairstow {
 
 	  public Bairstow()
 	  {
-	    a = new double[20];
-	    b = new double[20];
-	    c = new double[20];
+	    
 	  }
 
-	  public void readInput() throws IOException
-	  {
-	    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-	    n = Integer.parseInt(reader.readLine());
-
-	    String[] tokens = reader.readLine().split(" ");
-
+	  public Bairstow(String[] tokens, int m) {
+//	    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//	    n = Integer.parseInt(reader.readLine());
+//
+//	    String[] tokens = reader.readLine().split(" ");
+		a = new double[20];
+		b = new double[20];
+		c = new double[20];
+		n = m;
 	    for (int i = 0; i < n + 1; i++)
 	      a[n-i] = Double.parseDouble(tokens[i]);
 	  }
