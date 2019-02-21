@@ -31,7 +31,8 @@ public class IndexController {
 	
 	public void initialize() {
 		
-		Integer [] gradesoptions = {1,2,3,4,5,6,7,8,9,10};
+		Integer [] gradesoptions = {1,
+				2,3,4,5,6,7,8,9,10};
 		grades.setItems(FXCollections.observableArrayList(gradesoptions));
 		
 	}
